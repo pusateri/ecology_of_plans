@@ -1,3 +1,5 @@
+http://emptypipes.org/2015/02/15/selectable-force-directed-graph/
+
 This is an extension of Mike Bostock's [Draggable Network II](http://bl.ocks.org/mbostock/4566102) example, allowing one to drag multiple nodes in a force-directed graph. Nodes can be selected by holding the shift key and either dragging on the canvas or clicking on specific nodes. The selection and dragging semantics aim to mirror those of most window managers:
 
 1. Shift clicking on a node toggles whether it is selected

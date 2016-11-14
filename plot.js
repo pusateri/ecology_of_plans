@@ -82,7 +82,7 @@ function selectableForceDirectedGraph() {
 
     var vis = svg_graph.append("svg:g");
 
-    vis.attr('fill', 'red')
+    vis.attr('fill', 'blue')
     .attr('stroke', 'black')
     .attr('stroke-width', 1)
     .attr('opacity', 0.5)
@@ -213,8 +213,10 @@ function selectableForceDirectedGraph() {
 
             force.resume();
         }
+        var randomNumberBetween4and10 = Math.floor(Math.random() * 6) + 4;
+
         node = node.data(graph.nodes).enter().append("circle")
-        .attr("r", 4)
+        .attr("r", randomNumberBetween4and10)
         .attr("cx", function(d) { return d.x; })
         .attr("cy", function(d) { return d.y; })
         .on("dblclick", function(d) { d3.event.stopPropagation(); })
