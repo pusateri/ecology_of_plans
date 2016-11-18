@@ -213,10 +213,9 @@ function selectableForceDirectedGraph() {
 
             force.resume();
         }
-        var randomNumberBetween4and10 = Math.floor(Math.random() * 6) + 4;
 
         node = node.data(graph.nodes).enter().append("circle")
-        .attr("r", randomNumberBetween4and10)
+        .attr("r", 4)
         .attr("cx", function(d) { return d.x; })
         .attr("cy", function(d) { return d.y; })
         .on("dblclick", function(d) { d3.event.stopPropagation(); })
@@ -253,6 +252,12 @@ function selectableForceDirectedGraph() {
 
               force.on("tick", tick);
 
+        // randomize the size of the circles and colors
+        var colors = ["red", "blue", "green", "yellow", "purple", "orange"];
+        d3.selectAll("circle").transition()
+            .duration(750)
+            .attr("r", function() { return Math.floor(Math.random() * 8) + 2; })
+            .attr("fill", function() { return colors[Math.floor(Math.random() * 6)]});
     });
 
 
